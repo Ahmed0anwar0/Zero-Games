@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/skitter.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Zero-Games</title>
+</head>
+<body>
+    
+    <section class="games">
+
+        <header> 
+            <div class="lyr"></div>
+            <img class="bg-img w-100" src="images/bg-game.jpg" alt="">
+        </header>
+
+        <nav class="navbar navbar-expand-lg nav-bg position-sticky top-0 z-3 col-md-6 col-lg-9 mx-auto">
+
+            <div class="container">
+                <h5 class="navbar-brand mb-0 text-uppercase"><img class="logo-img" src="images/zero-logo.jpg" alt=""> Game Reviews</h5>
+                 <!-- ========================= -->
+                 <button class="mobile-nav-btn"><i class="fa-solid fa-bars"></i></button>
+                 <!-- ============================ -->
+                <div class="main-nav small navbar-collapse">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 menu small">
+                        <li class="nav-item">
+                           <a role="button" class="nav-link text-uppercase active" aria-current="page" data-category="mmorpg">mmorpg</a>
+                        </li>
+                        <li class="nav-item">
+                           <a role="button" class="nav-link text-uppercase " data-category="shooter">shooter</a>
+                        </li>
+                        <li class="nav-item">
+                           <a role="button" class="nav-link text-uppercase" data-category="sailing">sailing</a>
+                        </li>
+                        <li class="nav-item">
+                           <a role="button" class="nav-link text-uppercase" data-category="permadeath">permadeath</a>
+                        </li>
+                        <li class="nav-item">
+                           <a role="button" class="nav-link text-uppercase" data-category="superhero">superhero</a>
+                        </li>
+                        <li class="nav-item">
+                           <a role="button" class="nav-link text-uppercase" data-category="pixel">pixel</a>
+                        </li>
+                     </ul>
+                </div>
+               
+            </div>
+
+        </nav>
+
+        <main class="container my-5 home">
+            <section>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="gameData">
+                
+
+                </div>
+            </section>
+        </main>
+
+    </section>
+
+
+    <section class="details  d-none">
+      <div class="container">
+         <header class="hstack justify-content-between">
+            <h1 class="text-center h3 py-4">Details Game</h1>
+            <button class="btn-close btn-close-white" id="btnClose"></button>
+         </header>
+
+         <div class="row g-4" id="detailsContent">
+
+         </div>
+      </div>
+    </section>
+
+
+    <div class="loading">
+      <span class="loader"></span>
+    </div>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>
