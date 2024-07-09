@@ -110,6 +110,7 @@ footer span{
 
     color: #434238bd !important;
     border-color: rgb(229, 212, 183) !important;
+    margin-bottom: 20px;
 }
 .details a:hover{
    background-color: rgb(229, 212, 183) !important;

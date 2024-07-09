@@ -1,4 +1,5 @@
 'use strict'
+import * as myDetails from "./info.js";
 
 
 let cardImg = document.querySelector('figure img');
@@ -9,14 +10,14 @@ let cardSp2 = document.querySelector('footer .sp2');
 let row = document.querySelector('main section .row');
 let navA = document.querySelector('ul');
 
-let games = document.querySelector('.games');
-let details = document.querySelector('.details');
-let detailsContent = document.querySelector('#detailsContent');
+export let games = document.querySelector('.games');
+export let details = document.querySelector('.details');
+export let detailsContent = document.querySelector('#detailsContent');
 
 
 // ================================
 let anc = "mmorpg";
-getGames(anc).then(function(){getId()});
+getGames(anc).then(function(){myDetails.getId()});
 
 // ================================
 
@@ -26,7 +27,7 @@ navA.addEventListener('click',async function(e){
     }
     e.target.classList.add('active')
     anc = e.target.getAttribute('data-category');
-    await getGames(anc).then(function(){getId()});
+    await getGames(anc).then(function(){myDetails.getId()});
 
     });
 
@@ -90,61 +91,9 @@ function displayGames(){
 displayGames()
 row.innerHTML = cartona;
 
-}
-
-// ================================
-
-function getId(){
-let cards = document.querySelectorAll('main .row .col');
-cards.forEach(card => {
-    card.addEventListener('click', async function(e) {
-        let id = this.firstElementChild.getAttribute('data-id');
-
-        info(id)
-    });
-});
-
-}
-
-async function info(id){
-
-    const options = {
-            method: 'GET',
-            headers: {
-                'x-rapidapi-key': 'bf7d16edbemshae409b6042b0963p133b85jsnf8fe1cdf8636',
-                'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com'
-            }
-        };
-
-        const api = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`,options) ;
-       
-        const response = await api.json();
-
-   async function displayInfo(){
-
-    games.classList.toggle('d-none');
-    details.classList.toggle('d-none');
-
-    detailsContent.innerHTML =`
-    
-    <div class="col-md-4">
-               <img src="${response.thumbnail}" class="w-100" alt="image details">
-            </div>
-
-            <div class="col-md-8">
-               <h3>Title: ${response.title}</h3>
-               <p>Category: <span class="badge text-bg-info"> ${response.genre}</span> </p>
-               <p>Platform: <span class="badge text-bg-info"> ${response.platform}</span> </p>
-               <p>Status: <span class="badge text-bg-info"> ${response.status}</span> </p>
-               <p class="small">${response.description}</p>
-               <a class="btn btn-outline-warning" target="_blank" href="${response.game_url}">Show Game</a>
-            </div>
-    `
-
-   }
-   displayInfo()
 };
 
+// ================================
 
 let btnClose = document.querySelector('#btnClose');
 btnClose.addEventListener('click',function(){
